@@ -3,6 +3,10 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  home.enableNixpkgsReleaseCheck = false;
+
+  targets.genericLinux.gpu.enable = true;
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "aaditya";
@@ -19,7 +23,7 @@
       config.hyprland.default = ["hyprland" "gtk"];
     };
 
-   services.swayosd.enable = true;
+  services.swayosd.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -53,19 +57,15 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
-    pkgs.wofi
     pkgs.neovim
+	pkgs.fd
     pkgs.waybar
     pkgs.swaybg
     pkgs.rofi
     pkgs.uv
-    pkgs.emacs
-    pkgs.ripgrep
-    pkgs.fd
 	pkgs.nodejs
 	pkgs.blender
-	pkgs.yazi
-	pkgs.google-chrome
+
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
