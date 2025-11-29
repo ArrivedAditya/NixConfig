@@ -23,7 +23,33 @@
       config.hyprland.default = ["hyprland" "gtk"];
     };
 
-  services.swayosd.enable = true;
+  # services.swayosd.enable = true;
+
+  # systemd.user.services.swayosd.Install.WantedBy = [ "hyprland-session.target" ];
+
+  # systemd.user.services.swayosd-libinput-backend = {
+  #   Unit = {
+  #     Description = "SwayOSD libinput backend";
+  #     Requires = [ "swayosd.service" ];
+  #     After = [ "swayosd.service" ];
+  #     PartOf = [ "hyprland-session.target" ];
+  #   };
+  #   Service = {
+  #     ExecStart = "${pkgs.swayosd}/bin/swayosd-libinput-backend";
+  #     Restart = "on-failure";
+  #     RestartSec = "1";
+  #   };
+  #   Install = {
+  #     WantedBy = [ "hyprland-session.target" ];
+  #   };
+  # };
+
+  # services.dbus = {
+  #   enable = true;
+  #   services."org.swayosd.libinput" = {
+  #     systemdService = "swayosd-libinput-backend.service";
+  #   };
+  # };
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -94,9 +120,9 @@
       recursive = true;
     };
 
-    ".local/share/rofi/themes" = {
+    ".config/rofi/themes" = {
       source = dotfiles/rofi;
-      recursive = true;
+      recursive = false;
     };
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
