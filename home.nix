@@ -91,7 +91,8 @@
     pkgs.uv
 	pkgs.nodejs
 	pkgs.blender
-
+	pkgs.dotnet-sdk
+	pkgs.zig
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -124,6 +125,7 @@
       source = dotfiles/rofi;
       recursive = false;
     };
+
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose

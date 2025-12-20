@@ -43,6 +43,7 @@
 #battery,
 #pulseaudio,
 #network,
+#keyboard-state,
 #custom-lock,
 #custom-power {
   background-color: @surface0;
@@ -88,7 +89,7 @@
   border-radius: 1rem;
 }
 
-#custom-lock {
+#custom-lock, #keyboard-state {
     border-radius: 1rem 0px 0px 1rem;
     color: @lavender;
 }
