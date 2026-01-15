@@ -85,14 +85,15 @@
     # pkgs.hello
     pkgs.neovim
 	pkgs.fd
+	pkgs.ripgrep
+	pkgs.lazygit
     pkgs.waybar
     pkgs.swaybg
     pkgs.rofi
     pkgs.uv
 	pkgs.nodejs
-	pkgs.blender
-	pkgs.dotnet-sdk
-	pkgs.zig
+	pkgs.dotnet-sdk_10
+	pkgs.ollama
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
