@@ -53,7 +53,8 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.variables = ["-all"];
+	#systemd.enable = false;
+	systemd.variables = ["-all"];
     extraConfig = lib.readFile ./dotfiles/hypr/hyprland.conf;
 
   };
@@ -92,7 +93,6 @@
     pkgs.rofi
     pkgs.uv
 	pkgs.nodejs
-	pkgs.dotnet-sdk_10
 	pkgs.ollama
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
